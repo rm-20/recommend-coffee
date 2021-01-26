@@ -2,11 +2,12 @@
 """
 Spyder Editor
 
-coffee related app, take a short quiz,outputs coffee recommendation
+
 """
 import tkinter as tk
 from tkinter import *
 import random
+import ssqlite3
 
 class NewApp:
     def __init__(self):
@@ -73,7 +74,7 @@ class NewApp:
        
         self.submit = Button(self.newWindow, text = "Done!", command = self.quizResult)
         self.submit.grid(column = 0, row = 20, sticky = W, pady = 2)
-    
+        
     def storeFall(self):
         self.group1 += 1
         print(self.group1)
