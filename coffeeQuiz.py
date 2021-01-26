@@ -2,8 +2,6 @@
 """
 Spyder Editor
 
-This is a temporary script file.
-
 coffee related app, take a short quiz,outputs coffee recommendation
 """
 import tkinter as tk
@@ -28,12 +26,6 @@ class NewApp:
         self.group3 = 0
         self.group4 = 0
         
-        """questions are below
-           category 1: warm, magic, fally aesthetic
-           category 2: cold, dramatic, wintery aesthetic
-           category 3:new, happy, springy aesthetic
-           category 4: exciting summery aesthetic
-        """
         q1 = Label(self.newWindow, text = "What's your favorite season?")
         q1.grid(column = 0, row = 2,sticky = W, pady = 2)
         
@@ -81,8 +73,6 @@ class NewApp:
        
         self.submit = Button(self.newWindow, text = "Done!", command = self.quizResult)
         self.submit.grid(column = 0, row = 20, sticky = W, pady = 2)
-        
-        ##fine till this point
     
     def storeFall(self):
         self.group1 += 1
