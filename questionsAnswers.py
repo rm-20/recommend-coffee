@@ -1,30 +1,49 @@
 # -*- coding: utf-8 -*-
 import sqlite3
+import pandas as pd
 
 conn = sqlite3.connect('example.db')
-
 c = conn.cursor()
-
-# Create table
-#c.execute('''CREATE TABLE IF NOT EXISTS test(test text)''')
-#c.execute("""CREATE TABLE questions (question text, answer1, answer2, answer3, answer4)""")
-
-# Insert a row of data
-#c.execute("INSERT INTO test VALUES ('one')")
-c.execute("""INSERT INTO questions VALUES('Whats your favorite season','Fall','Winter','Spring','Summer')""")
-
+#c.execute("""CREATE TABLE questionAnswer (id integer primary key not null,
+#          question text, group1 text, group2 text, group3 text, group4 text)""")
+#c.execute("""INSERT INTO questionAnswer VALUES(1,'Whats your favorite season','Fall','Winter','Spring','Summer')""")
 question_list = ['Pick your favorite show','Pick your favorite genre','Pick your favorite character','Pick your favorite past time']
-answer1_list = ['Wizards of Waverly Place','Horror','Hermione Granger','Reading']
-answer2_list = ['One Tree Hill','Drama','Bella Swan','Exercising']
-answer3_list = ['The Office','Comedy','Kelly Kapoor','Cooking']
-answer4_list = ['Avatar:The Last Airbender','Adventure','Toph Beifong','Exploring']
-
-for item in question_list:
-    c.execute("""INSERT INTO questions(question) VALUES(%s)"""(item))
-# Save (commit) the changes
+group1_list = ['Wizards of Waverly Place','Horror','Hermione Granger','Reading']
+group2_list = ['One Tree Hill','Drama','Bella Swan','Exercising']
+group3_list = ['The Office','Comedy','Kelly Kapoor','Cooking']
+group4_list = ['Avatar:The Last Airbender','Adventure','Toph Beifong','Exploring']
 conn.commit()
 
-for row in c.execute('SELECT * FROM questions'):
-        print(row)
-conn.close()
+#row = 1
+#for item in question_list:
+ #    row += 1
+  #   c.execute("INSERT INTO questionAnswer(question) VALUES(?)",(item,))
+#conn.commit()
+
+#row = 1
+#for item in group1_list:
+#    row += 1
+#    c.execute("UPDATE questionAnswer SET group1 = ? WHERE id = ?",(item,row))
+#conn.commit()
+
+#row = 1
+#for item in group2_list:
+#    row += 1
+#    c.execute("UPDATE questionAnswer SET group2 = ? WHERE id = ?",(item,row))
+#conn.commit()
+
+#row = 1
+#for item in group3_list:
+#    row += 1
+#    c.execute("UPDATE questionAnswer SET group3 = ? WHERE id = ?",(item,row))
+#conn.commit()
+
+row = 1
+#for item in group4_list:
+ #   row += 1
+  #  c.execute("UPDATE questionAnswer SET group4 = ? WHERE id = ?",(item,row))
+#conn.commit()
+
+for row in c.execute("SELECT * FROM questionAnswer"):
+    print(row)
 

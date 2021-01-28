@@ -7,7 +7,7 @@ Spyder Editor
 import tkinter as tk
 from tkinter import *
 import random
-import ssqlite3
+import questionsAnswers
 
 class NewApp:
     def __init__(self):
